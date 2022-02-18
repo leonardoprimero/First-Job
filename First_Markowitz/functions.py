@@ -38,6 +38,7 @@ def load_timeseries (ric, file_extension= 'csv'):
     t['close'] = table_raw['Close']
     t['close_previous'] = table_raw['Close'].shift(1)
     t['return_close'] = t['close']/t['close_previous']-1
+    # t['return_cumulative'] = (t['return_close']+1).cumprod()
     t = t.dropna()
     t = t.reset_index(drop= True)
     # imput from Jarque Bera Test
