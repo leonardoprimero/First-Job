@@ -100,7 +100,12 @@ class jarque_bera_test ():
         
     def plot_histogram(self):
         functions.plot_histogram(self.returns, self.str_name,self.plot_str())
-    
+             
+    def plot_returns(self):
+        stream_functions.plot_timeseries_return_close(self.t,self.ric)
+        
+    def plot_returns_cumulatives(self):
+        stream_functions.plot_returns_cumulative(self.t, self.ric)   
     
 class capm_manager():
     
