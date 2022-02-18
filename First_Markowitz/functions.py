@@ -59,6 +59,20 @@ def plot_histogram (x,x_str,plot_str,bins=100):
     plt.title('Histogram ' + x_str )
     plt.xlabel(plot_str)
     plt.show()
+def plot_timeseries_return_close (t, ric):
+    plt.figure()
+    plt.plot(t['date'], t['return_close'])
+    plt.title('Time series Return Close ' + ric) 
+    plt.xlabel ('Time')
+    plt.ylabel ('Return')
+    plt.show() 
+def plot_returns_cumulative (t, ric):
+    plt.figure()
+    plt.plot(t['date'], t['return_cumulative'])
+    plt.title('Time series Return Cumulative' + ric) 
+    plt.xlabel ('Time')
+    plt.ylabel ('Return Cumulative')
+    plt.show()
     
     
 def syncronize_timeseries(benchmark,ric, file_extension = 'csv') :
